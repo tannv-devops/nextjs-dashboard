@@ -16,13 +16,6 @@ async function listInvoices() {
 }
 
 export async function GET(rewquest: NextRequest) {
-
-  const cookieStore = await cookies();
-
-  const a = cookieStore.get('a');
-  const b = cookieStore.set('b', '123');
-  console.log('Cookie b:', b);
-
   try {
   	return Response.json(await listInvoices());
   } catch (error) {
